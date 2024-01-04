@@ -20,7 +20,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh);
 }
 
 .MainDiv{
