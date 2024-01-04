@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Sir!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inder" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico"    >
+</head>
+    <body>
+        <nav class="p-3 position-absolute">
+            <img src="./assets/Logo.png" width="50px">
+        </nav>
+
+        <div class="d-flex justify-content-center align-items-center h-100" >
+            <div class="p-2 JoinBox d-flex justify-content-center flex-column align-items-center">
+                <p class="fs-2 mb-4">Join</p>
+                <form action="./chat.html" >
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" name="name" id="Name" placeholder="Name" required>
+                        <label for="Name">Name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" name="room" id="Room" placeholder="Room" required>
+                        <label for="Room">Room</label>
+                    </div>
+                    <button class="fs-4">Join</button>
+                </form>
+            </div>
+        </div>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script>
+        const {error} = Qs.parse(location.search,{ignoreQueryPrefix:true})
+        if(error){
+            alert(error)
+        }
+    </script>
+</html>

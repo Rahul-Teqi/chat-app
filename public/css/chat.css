@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Inder;
+    color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+body{
+    background-image: url('../assets/Background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.MainDiv{
+    display: flex;
+}
+
+.sideBar{
+    z-index: 1;
+    transition: all 0.5s ease;
+    width: 270px;
+    height: 100vh;
+    background: rgba(13, 18, 27, 0.719);
+    border-right: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+.main{
+    width: 100%;
+    height: calc(100vh - 60px);  
+}
+
+nav{
+    background: rgba(13, 18, 27, 0.59);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+    height: 50px;
+}
+
+.ArrowCon{
+    display: none;
+    position: absolute;
+    height: calc(100vh - 60px);
+    align-items: center;
+    z-index: 1;
+    left: 0;
+    transition: left 0.5s ease;
+}
+
+.ArrowConMove{
+    left: 280px !important;
+    rotate: 180deg;
+}
+
+.ArrowCon img{
+    animation: 1s ArrowMove infinite;
+}
+
+.showSideBar{
+    left: 0 !important;
+}
+
+.messageCon{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+.InputMain{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.InputCon{
+    width: 80%;
+    margin: 20px;
+    display: flex;
+}
+
+.InputCon input{
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    outline: 0;
+    text-indent: 15px;
+    color: black;
+}
+
+.messageELementCon{
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    overflow-x: hidden;
+    padding-bottom: 70px;
+}
+
+.OwnMessageCon{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.messageHoldOther{
+    min-width: 50px;
+    min-height: 30px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    background-color: aqua;
+    border: 0;
+    border-radius: 0px 18px 18px 18px;
+    background: rgba(128, 0, 255, 0.21);
+    word-wrap: break-word;
+    text-align: right;
+}
+
+.OwnMessage{
+    display: flex;
+    right: 30px;
+}
+
+.OtherMessage{
+    display: flex;
+    right: 30px;
+}
+
+
+
+.messageHold{
+    min-width: 50px;
+    min-height: 30px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    background-color: aqua;
+    border: 0;
+    border-radius: 18px 0px 18px 18px;
+    background: rgba(128, 0, 255, 0.21);
+    word-wrap: break-word;
+}
+
+.serverMessageCon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serverMessage{
+    margin: 15px;
+    height: 25px;
+    min-width: 200px;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(128, 0, 255, 0.21);
+    text-align: center;
+}
+
+
+@keyframes ArrowMove{
+    0%{
+        transform: translateX(10px);
+    }
+
+    50%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(10px);
+
+    }
+}
+
+@media (max-width:750px) {
+    .sideBar{
+        position: absolute;
+        background: rgba(13, 18, 27, 0.918);
+        left: -100%
+    }
+
+    .ArrowCon{
+        display: flex;
+    }
+
+    .messageCon{
+        height: 85vh;
+    }
+
+    .InputMain {
+        bottom: 0px;
+    }
+
+    .messageHold{
+        max-width: 250px;
+    }
+}

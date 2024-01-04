@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/chat.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inder" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="MainDiv">
+        <div class="sideBar" id="sideBar">
+          
+            
+        </div>
+        <div class="ArrowCon" id="ArrowCon">
+            <img id="arrowElement" src="./assets/arrow.png" width="30px" />
+        </div>
+        <div class="main">
+            <nav class="p-2 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/Logo.png" width="40px" style="margin-right: 15px;" />
+                    <h4 class="p-0 m-0" id="RoomName"></h4>
+                </div>
+                <h4 class="p-0 " style="margin-right: 15px;margin-bottom: 0;"><a href="/">Logout</a></h4>
+            </nav>
+            <div class="messageCon">
+                <div class="messageELementCon" id="messages">
+
+                    <!-- All Message comes here -->
+
+                </div>
+                <form id="ChatForm">
+                <div class="InputMain">
+                    <div class="InputCon">
+                            <input type="text" name="message" id="message" placeholder="Message......." autocomplete="off" required/>
+                            <button id="MessageBtn" type="submit" style="background-color: transparent;border: 0;" class="m-0 p-0"><img src="./assets/send.png" width="40px" height="40px" style="margin-left: -38px;"/></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Sliderbar user Templates -->
+<script id="SideBarUserTemplate" type="text/html">
+    {{#users}}
+    <div class="d-flex  align-items-center p-2" style="width: 250px;height: 50px;border-bottom: 1px solid rgba(255, 255, 255, 0.30);">
+        <img style="margin-left: 20px;" src="./assets/man.png" width="40px" height=" 40px"/>
+        <div style="margin-left: 15px;">
+            <p class="fs-6" style="margin: 0;">{{name}}</p>
+            <p style="color: #777777;font-size: 13px;margin: 0;" >{{createAt}}</p>
+        </div>
+    </div>
+    {{/users}}
+</script>
+
+<!-- Server Message Template -->
+<script id="serverMessageTemplate" type="text/html">
+     <div class="serverMessageCon">
+        <div class="serverMessage">
+            {{message}}
+        </div>
+    </div>
+</script>
+
+<!-- Own Message Template -->
+<script id="ownMessageTemplate" type="text/html">
+    <div class="OwnMessageCon">
+        <div class="OwnMessage">
+            <div style="margin-right: 10px;">
+                <p class="fs-6 p-0 m-0" style="text-align: right;">{{name}}</p>
+                <div class="messageHold">
+                 {{message}}   
+                </div>
+                <div style="margin-left: -20px;color: #696969;font-size: 12px;">{{createAt}}</div>
+            </div>
+            <img src="./assets/man.png" width="40px" height="40px"/>
+        </div>
+    </div>
+</script>
+
+<!-- Others Message Template -->
+<script id="OtherMessageTemplate" type="text/html">
+    <div class="OtherMessageCon">
+        <div class="OtherMessage">
+            <img src="./assets/man.png" width="40px" height="40px"/>
+            <div style="margin-left: 10px;">
+                <p class="fs-6 p-0 m-0">{{name}}</p>
+                <div class="messageHoldOther">
+                    {{message}}
+                </div>
+                <div style="margin-right: -20px;color: #696969;font-size: 12px;text-align: right;">{{createAt}}</div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+
+</html>
