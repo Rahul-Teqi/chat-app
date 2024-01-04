@@ -67,7 +67,7 @@ socket.on('message',(message)=>{
     } 
 
     $messages.insertAdjacentHTML('beforeend',html)
-    console.log(message);
+    // console.log(message);
     autoscroll()
 })
 
@@ -80,7 +80,7 @@ socket.on('serverMessage',(message)=>{
     })
     $messages.insertAdjacentHTML('beforeend',html)
     autoscroll()
-    console.log(message);
+    // console.log(message);
 })
 
 //SomeOne has Join the Room
@@ -89,7 +89,7 @@ socket.on('SomeOneJoin',(message)=>{
         message:capitalizeFirstLetter(message.message)
     })
     $messages.insertAdjacentHTML('beforeend',html)
-    console.log(message);
+    // console.log(message);
     autoscroll()
 
 })
@@ -100,14 +100,14 @@ socket.on('SomeOneLeft',(message)=>{
         message:capitalizeFirstLetter(message.message)
     })
     $messages.insertAdjacentHTML('beforeend',html)
-    console.log(message);
+    // console.log(message);
     autoscroll()
 
 })
 
 //Room Data
 socket.on('roomData',({users})=>{
-    console.log(users);
+    // console.log(users);
     const html = Mustache.render(SideBarUserTemplate,{
         users
     })
