@@ -1,5 +1,5 @@
+const memoryCache = require('memory-cache');
 users = []
-
 const addUser = ({id,name,room}) =>{
 
     name = name.trim().toLowerCase()
@@ -34,6 +34,11 @@ const addUser = ({id,name,room}) =>{
 const revomeUser = (id) =>{
 
     const index = users.findIndex((user)=>user.id === id)
+
+    if(users.length == 1){
+        console.log("Cache Cleared");
+        memoryCache.clear();
+    }
 
     if(index !== -1){
         return users.splice(index,1)[0]
